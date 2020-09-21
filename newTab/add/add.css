@@ -1,0 +1,35 @@
+.add-panel{
+    width: 1440px;
+    height: 800px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #DCDFE6;
+    border-radius: 4px;
+}
+
+#app{
+    background: #F4F5F6;
+    height: 100%;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.panel-title{
+    font-size: 22px;
+    padding: 15px;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #EBEEF5;
+}
+.panel-add{
+    margin: 20px auto;
+    width: 60%;
+}

@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,  // 解析插件的内核模块版本号
+  "version": "1.0.0",  // 版本号
+  "name": "公司环境账号密码填充插件",  // 插件名
+  "description": "公司环境账号密码填充插件",
+  "icons": {
+    "128": "img/yunji.png"
+  }, // icon文件，建议提供3种不同大小的，Chrome会在不同情况是用对应大小的图片
+  //要加载的资源,如果你的html里需要引入js的话,请务必写上
+  "browser_action": {
+    "default_title": "公司环境账号密码填充插件"
+  },
+  // 功能，访问权限
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "contextMenus",
+    "management",
+    "tabs",
+    "cookies",
+    "history",
+    "storage",
+    "notifications",
+    "downloads",
+    "downloads.shelf",
+    "http://*/*",
+    "https://*/*"
+  ],
+  // 使用的外部插件资源
+  "web_accessible_resources": [
+    "jquery.js" ,
+    "index.js",
+    "newTab/layer/layui.all.js",
+    "newTab/layer/css/layui.css",
+    "newTab/lib/httpServe.js",
+    "img/key.png",
+    "img/close.png",
+    "img/yunji.png"
+  ],
+  "background": {
+    "scripts": ["background.js", "newTab/utils/jquery.js", "newTab/lib/httpServe.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["contentScriptCss.css"],
+      "js": ["newTab/lib/axios.min.js", "newTab/lib/httpServe.js", "newTab/layer/layui.all.js", "jquery.js" , "myLogin.js", "utils/webtemplate.js", "page/noMatchingAccount.js"]
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'; script-src-elem 'self';"
+}
