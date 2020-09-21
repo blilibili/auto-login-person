@@ -30,8 +30,6 @@
   "web_accessible_resources": [
     "jquery.js" ,
     "index.js",
-    "newTab/layer/layui.all.js",
-    "newTab/layer/css/layui.css",
     "newTab/lib/httpServe.js",
     "img/key.png",
     "img/close.png",
@@ -45,7 +43,16 @@
     {
       "matches": ["http://*/*", "https://*/*"],
       "css": ["contentScriptCss.css"],
-      "js": ["newTab/lib/axios.min.js", "newTab/lib/httpServe.js", "newTab/layer/layui.all.js", "jquery.js" , "myLogin.js", "utils/webtemplate.js", "page/noMatchingAccount.js"]
+      "js": [
+        "newTab/lib/axios.min.js",
+        "newTab/lib/httpServe.js",
+        "newTab/layer/layui.js",
+        "newTab/layer/lay/modules/laytpl.js",
+        "jquery.js" ,
+        "myLogin.js",
+        "utils/webtemplate.js",
+        "page/noMatchingAccount.js"
+      ]
     }
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'; script-src-elem 'self';"
