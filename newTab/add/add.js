@@ -4,6 +4,7 @@ var app = new Vue({
     return {
       submitData: {
         website: '',
+        name: '',
         account: '',
         password: '',
         isAutoLogin: false,
@@ -42,6 +43,12 @@ var app = new Vue({
             this.submitData[v] = res.data[v]
           }
         })
+
+        if(this.submitData.isAutoLogin) {
+          this.submitData.isAutoLogin = true
+        }else{
+          this.submitData.isAutoLogin = false
+        }
       })
     },
     submitAccountMethods() {

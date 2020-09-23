@@ -1,5 +1,6 @@
 const http = axios.create({
   baseURL: 'http://122.51.89.68:3000',
+  // baseURL: 'http://localhost:3000',
   headers: {}
 })
 
